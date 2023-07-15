@@ -1,27 +1,23 @@
-$(document).ready(function() {
-    $("#btnLogin").click(function(){
-        let usuario = $("#username").val();
-        let password = $("#password").val();
-        localStorage.setItem("usuario", usuario);
-        localStorage.setItem("password", password);
-        window.location.href = "pages/home.html";
-    })
+$(document).ready(function () {
+  $("#btnLogin").click(function () {
+    let usuario = $("#usuario").val();
+    let password = $("#password").val();
 
-    $("#showPass").click(function() {
-        var passwordInput = $("#password");
+    localStorage.setItem("usuario", usuario);
+    localStorage.setItem("password", password);
 
-        if (passwordInput.attr("type") === "password") {
-          passwordInput.attr("type", "text");
-        } else {
-          passwordInput.attr("type", "password");
-        }
-      });
-  });
+    window.location.href = "pages/home.html";
+  })
 
-$.ajax({
-    url: 'https://randomuser.me/api/',
-    dataType: 'json',
-    success: function(data) {
-      console.log(data);
+  $("#showPass").click(function () {
+    var passwordInput = $("#password");
+
+    if (passwordInput.attr("type") === "password") {
+      passwordInput.attr("type", "text");
+    } else {
+      passwordInput.attr("type", "password");
     }
+  });
+ 
 });
+
